@@ -3,47 +3,25 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/activity_detail.xml" value="0.3491847826086957" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/activity_login.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/activity_main.xml" value="0.3491847826086957" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/activity_main2.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/activity_main3.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/fragment_1.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/fragment_2.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/fragment_3.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/item_layout_lr.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/item_layout_rl.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/login.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/mymatch.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/mypage.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/myteam.xml" value="0.31302083333333336" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/popup1.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/popup2.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/sign_up.xml" value="0.30416666666666664" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/sign_up_sns.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/layout/uploaded_items.xml" value="0.3015625" />
-        <entry key="..\:/Users/HeeChan/Desktop/start/app/src/main/res/menu/search_setting.xml" value="0.5536458333333333" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1575" />
-        <entry key="app/src/main/res/layout/activity_detail.xml" value="0.16875" />
-        <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main3.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_1.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_3.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/item_layout_lr.xml" value="0.16875" />
-        <entry key="app/src/main/res/layout/item_layout_rl.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/login.xml" value="0.45" />
-        <entry key="app/src/main/res/layout/mypage.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/popup1.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/popup2.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/sign_np_sns.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/sign_up.xml" value="0.23796296296296296" />
-        <entry key="app/src/main/res/layout/sign_up_sns.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/uploaded_items.xml" value="0.25" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/fragment_1.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/item_layout_lr.xml" value="0.4361413043478261" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/item_layout_rl.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/TabMaking/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/TabMaking/app/src/main/res/layout/item_layout_lr.xml" value="0.1585612968591692" />
+        <entry key="..\:/Users/HeeChan/AndroidStudioProjects/TabMaking/app/src/main/res/layout/item_layout_rl.xml" value="0.1585612968591692" />
+        <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment1.xml" value="0.2046875" />
+        <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment_1.xml" value="0.36614583333333334" />
+        <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment_2.xml" value="0.2046875" />
+        <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment_3.xml" value="0.2046875" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
 </project>

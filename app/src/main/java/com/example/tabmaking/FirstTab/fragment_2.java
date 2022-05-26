@@ -1,4 +1,4 @@
-package com.example.tabmaking;
+package com.example.tabmaking.FirstTab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,20 +10,23 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
+import com.example.tabmaking.R;
 
-public class fragment_3 extends Fragment {
+
+public class fragment_2 extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(
-                R.layout.fragment_3, container, false);
+                R.layout.fragment_2, container, false);
 
-        ImageButton imgbtn = (ImageButton) rootView.findViewById(R.id.imgBanner3);
+        ImageButton imgbtn = (ImageButton) rootView.findViewById(R.id.imgBanner2);
         imgbtn.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
                 getActivity().startActivity(new Intent(getActivity(), MatchActivity.class));
             }
         });
+
         return rootView;
     }
 }

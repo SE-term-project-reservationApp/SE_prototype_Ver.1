@@ -19,8 +19,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".MatchActivity"/>
-        <activity android:name=".myTeamPageActivity"/>
+        <activity android:name=".FirstTab.MatchActivity"/>
+        <activity android:name=".MyteamPage.myTeamPageActivity"/>
+        <activity android:name=".Booking.bookingComplete"/>
+        <activity android:name=".Booking.booking_Activity"/>
 
     </application>
 

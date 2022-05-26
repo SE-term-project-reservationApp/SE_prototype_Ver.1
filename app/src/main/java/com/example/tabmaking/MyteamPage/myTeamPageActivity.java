@@ -1,25 +1,23 @@
-package com.example.tabmaking;
+package com.example.tabmaking.MyteamPage;
 
-import android.app.ActivityOptions;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
-import android.util.Log;
-import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.tabmaking.R;
+import com.example.tabmaking.SecondTab.Item;
+import com.example.tabmaking.SecondTab.ItemAdapter;
 
 import java.io.File;
 import java.io.IOException;
@@ -37,7 +35,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private reserve_ItemAdapter reserve_ItemAdapter;
+    private com.example.tabmaking.MyteamPage.reserve_ItemAdapter reserve_ItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

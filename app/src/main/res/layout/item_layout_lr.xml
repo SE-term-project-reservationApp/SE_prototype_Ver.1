@@ -35,6 +35,7 @@
                 android:text="정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ" />
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Booking_Gujang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"

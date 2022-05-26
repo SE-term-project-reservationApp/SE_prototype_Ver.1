@@ -11,6 +11,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.example.tabmaking.MyteamPage.MyAdapter;
+import com.example.tabmaking.MyteamPage.myTeamPageActivity;
+import com.example.tabmaking.SecondTab.Item;
+import com.example.tabmaking.SecondTab.ItemAdapter;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 

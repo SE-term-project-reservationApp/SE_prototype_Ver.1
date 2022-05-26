@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="희찬 FC와의 매칭! 어떠세요?"
+        android:textSize="30dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n대충 정보 넣는 곳\n"
+        />
+</LinearLayout>

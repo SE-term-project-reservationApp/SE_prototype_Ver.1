@@ -114,8 +114,8 @@ public class MainActivity extends FragmentActivity{
             public void onClick(View view){
                 anim();
                 //TODO 내 팀 페이지 만들어서 연결
-                //Intent myTeamPage = new Intent(MainActivity.this, myTeamPageActivity.class);
-                //startActivity(myTeamPage);
+                Intent myTeamIntent = new Intent(MainActivity.this, myTeamPageActivity.class);
+                startActivity(myTeamIntent);
             }
         });
     }

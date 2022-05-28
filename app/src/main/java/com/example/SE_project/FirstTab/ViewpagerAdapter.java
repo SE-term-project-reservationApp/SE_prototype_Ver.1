@@ -2,6 +2,7 @@ package com.example.SE_project.FirstTab;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import com.example.SE_project.MyteamPage.ReservationItem;
 import com.example.SE_project.MyteamPage.reserve_ItemAdapter;
 import com.example.SE_project.R;
 import com.example.SE_project.SecondTab.Reservation;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
@@ -58,7 +61,22 @@ public class ViewpagerAdapter extends RecyclerView.Adapter<ViewpagerAdapter.View
                 db.collection("User").document(local.getNickname()).collection(local.getUsername()).document(items.get(position).getName()).set(b);
                items.remove(position);
                notifyDataSetChanged();
+                db.collection("need").document(item.getTeam())
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting document", e);
+                            }
+                        });
                 Toast.makeText(context, "예약 정보에 추가되었습니다.", Toast.LENGTH_SHORT).show();
+
             }
         });
     }

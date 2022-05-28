@@ -7,7 +7,7 @@ public class ReservationItem {
 
     }
 
-    public ReservationItem(String name,String adress,String time,String tema){
+    public ReservationItem(String name,String adress,String time,String team){
         this.name=name;
         this.adress=adress;
         this.time=time;

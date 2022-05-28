@@ -55,6 +55,7 @@ public class MainActivity extends FragmentActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Local local = (Local) getApplication();
         db.collection("User").whereEqualTo("id", user.getEmail()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override

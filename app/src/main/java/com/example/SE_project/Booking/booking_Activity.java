@@ -27,7 +27,7 @@ public class booking_Activity extends Activity {
 
 
 
-    Integer Year, Month, Day, Hour, Minute;
+    Integer Year, Month, Day, FromHour, ToHour;
 
     Button btnToTable;
     Button btnDayOk;
@@ -54,7 +54,33 @@ public class booking_Activity extends Activity {
             //선택 시 작동기능
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Hour = position;
+                switch (position){
+                    case 6:
+                        ToHour = 8;
+                        FromHour = 10;
+                    case 5:
+                        ToHour = 10;
+                        FromHour = 12;
+                    case 4:
+                        ToHour = 12;
+                        FromHour = 14;
+                    case 3:
+                        ToHour = 14;
+                        FromHour = 16;
+
+                    case 2:
+                        ToHour = 16;
+                        FromHour = 18;
+
+                    case 1:
+                        ToHour = 18;
+                        FromHour = 20;
+
+                    case 0:
+                        ToHour = 20;
+                        FromHour = 22;
+                }
+
             }
 
             @Override
@@ -78,7 +104,6 @@ public class booking_Activity extends Activity {
                 Year = dPicker.getYear();
                 Month = 1 + dPicker.getMonth();
                 Day = dPicker.getDayOfMonth();
-
                 //TODO 이거 되는 시간인지 확인!
 
             }

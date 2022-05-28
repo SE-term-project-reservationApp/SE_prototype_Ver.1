@@ -99,7 +99,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/fromHour"
+                android:id="@+id/toHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
@@ -112,7 +112,7 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/toHour"
+                android:id="@+id/fromHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"

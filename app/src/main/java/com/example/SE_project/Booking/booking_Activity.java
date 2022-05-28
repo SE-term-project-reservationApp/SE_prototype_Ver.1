@@ -58,27 +58,31 @@ public class booking_Activity extends Activity {
                     case 6:
                         ToHour = 8;
                         FromHour = 10;
+                        break;
                     case 5:
                         ToHour = 10;
                         FromHour = 12;
+                        break;
                     case 4:
                         ToHour = 12;
                         FromHour = 14;
+                        break;
                     case 3:
                         ToHour = 14;
                         FromHour = 16;
-
+                        break;
                     case 2:
                         ToHour = 16;
                         FromHour = 18;
-
+                        break;
                     case 1:
                         ToHour = 18;
                         FromHour = 20;
-
+                        break;
                     case 0:
                         ToHour = 20;
                         FromHour = 22;
+                        break;
                 }
 
             }

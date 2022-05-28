@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabMaking">
         <activity
-            android:name="com.example.SE_project.MainActivity"
+            android:name="com.example.SE_project.Login.MainActivity3"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,6 +23,10 @@
         <activity android:name="com.example.SE_project.MyteamPage.myTeamPageActivity"/>
         <activity android:name="com.example.SE_project.Booking.bookingComplete"/>
         <activity android:name="com.example.SE_project.Booking.booking_Activity"/>
+        <activity android:name=".Login.FindPW"></activity>
+        <activity android:name=".Login.LoginActivity"></activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".Login.SignupActivity"></activity>
 
     </application>
 

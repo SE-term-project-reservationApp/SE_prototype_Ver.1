@@ -22,7 +22,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private View login_K, logout_K;
-    private ImageView profileImage;
+
     private static final String TAG = "LoginActivity";
     private FirebaseAuth mAuth;
     //private CallbackManager mCallbackManager;

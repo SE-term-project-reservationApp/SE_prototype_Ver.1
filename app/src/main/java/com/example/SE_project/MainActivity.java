@@ -13,7 +13,10 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
+import com.example.SE_project.FirstTab.ViewpagerAdapter;
+import com.example.SE_project.Login.User;
 import com.example.SE_project.MyteamPage.MyAdapter;
+import com.example.SE_project.MyteamPage.ReservationItem;
 import com.example.SE_project.MyteamPage.myTeamPageActivity;
 import com.example.SE_project.SecondTab.Item;
 import com.example.SE_project.SecondTab.ItemAdapter;
@@ -22,6 +25,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.FirebaseApp;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -30,12 +35,13 @@ import com.google.firebase.storage.FirebaseStorage;
 
 public class MainActivity extends FragmentActivity{
 
-    private ViewPager2 mPager;
+    private ViewPager2 mPager, viewPager2;
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 3;
 
      RecyclerView recyclerView;
    ItemAdapter itemAdapter;
+   ViewpagerAdapter adapter;
 
     //윤수 TAB 변수들 선언
     FloatingActionButton plus;
@@ -44,11 +50,32 @@ public class MainActivity extends FragmentActivity{
     private Boolean isFabOpen = false;
     private FirebaseStorage storage;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Local local = (Local) getApplication();
+        db.collection("User").whereEqualTo("id", user.getEmail()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        User user=document.toObject(User.class);
+                        local.setUsername(user.getUsername());
+                        local.setUri(user.getPro_img());
+                        local.setIntro(user.getIntro());
+                        local.setNickname(user.getNickname());
+                        Log.d("uri세팅", local.getUri());
 
+                    }
+                }
+                else
+                {
+                    Log.d("실패","응 실패야",task.getException());
+                }
+            }
+        });
         //1번 탭 미리 표시
         firstView();
         secondView();
@@ -78,13 +105,13 @@ public class MainActivity extends FragmentActivity{
 
         switch (index) {
             case 0:
-                mPager.setVisibility(View.VISIBLE);
+                viewPager2.setVisibility(View.VISIBLE);
                 recyclerView.setVisibility(View.INVISIBLE);
                 plus.setVisibility(View.VISIBLE);
                 break;
             case 1:
                 recyclerView.setVisibility(View.VISIBLE);
-                mPager.setVisibility(View.INVISIBLE);
+                viewPager2.setVisibility(View.INVISIBLE);
                 plus.setVisibility(View.INVISIBLE);
                 break;
         }
@@ -92,31 +119,38 @@ public class MainActivity extends FragmentActivity{
 
     //TODO 여기다가 매칭 페이지랑 마이팀 페이지 버튼 Implement
     private void firstView() {
+
         //ViewPager2
-        mPager = findViewById(R.id.viewpager);
-        //Adapter
-        pagerAdapter = new MyAdapter(this, num_page);
-        mPager.setAdapter(pagerAdapter);
-        //ViewPager Setting
-        mPager.setOrientation(ViewPager2.ORIENTATION_VERTICAL);
-        mPager.setCurrentItem(1000);
-        mPager.setOffscreenPageLimit(3);
-        //Change in position -> change in view page
-        mPager.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+        viewPager2=findViewById(R.id.viewpager);
+        adapter = new ViewpagerAdapter();
+        viewPager2.setAdapter(adapter);
+        adapter.notifyDataSetChanged();
+        db.collection("need").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
             @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-                super.onPageScrolled(position, positionOffset, positionOffsetPixels);
-                if (positionOffsetPixels == 0) {
-                    mPager.setCurrentItem(position);
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        ReservationItem item=document.toObject(ReservationItem.class);
+                        adapter.addItem(item);
+                        adapter.notifyDataSetChanged();
+                        Log.d("확인",document.getId()+"=>"+document.getData());
+                    }
+                }
+                else
+                {
+                    Log.d("실패","응 실패야",task.getException());
                 }
             }
         });
+        //ViewPager2
+
         //윤수 TAB
         fab_open = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_open);
         fab_close = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.fab_close);
 
         plus = (FloatingActionButton) findViewById(R.id.plus);
         myTeam = (FloatingActionButton) findViewById(R.id.team_btn);
+
         plus.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -132,6 +166,7 @@ public class MainActivity extends FragmentActivity{
                 startActivity(myTeamIntent);
             }
         });
+
     }
 
     //TODO 여기다가 예약 페이지 만들기
@@ -147,8 +182,6 @@ public class MainActivity extends FragmentActivity{
                 if(task.isSuccessful()){
                     for(QueryDocumentSnapshot document:task.getResult()){
                         Item item=document.toObject(Item.class);
-                        Log.d("아이템", item.getName());
-                        Log.d("아이템", item.getIntro());
                         itemAdapter.addItem(item);
                         itemAdapter.notifyDataSetChanged();
                     }

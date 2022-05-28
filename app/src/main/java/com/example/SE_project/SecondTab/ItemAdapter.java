@@ -53,6 +53,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
                 public void onClick(View view) {
                     Intent booking_link_intent = new Intent(context, booking_Activity.class);
                     booking_link_intent.putExtra("구장이름", item.getName());
+                    booking_link_intent.putExtra("구장주소", item.getIntro());
                     context.startActivity(booking_link_intent);
                 }
             });

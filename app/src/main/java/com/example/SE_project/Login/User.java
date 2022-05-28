@@ -48,7 +48,7 @@ public class User {
         return pro_img;
     }
 
-    public void setPro_img() {
+    public void setPro_img(String pro_img) {
         this.pro_img=pro_img;
     }
 
@@ -56,7 +56,7 @@ public class User {
         return intro;
     }
 
-    public void setIntro() {
+    public void setIntro(String intro) {
         this.intro=intro;
     }
 

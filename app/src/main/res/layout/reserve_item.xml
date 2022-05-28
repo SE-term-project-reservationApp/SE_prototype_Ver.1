@@ -32,7 +32,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ\n정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ\n" />
+                 />
+            <TextView
+                android:id="@+id/reserve_time"
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

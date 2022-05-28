@@ -55,7 +55,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 
         mContext = this;
         //밑에 사진 띄우기
-        init();
+        //init();
     }
     //프로필 이미지 설정 methods/////////////////////////////////////////////////////////////////
     /**
@@ -138,7 +138,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
                 .show();
     }
     //밑에 사진 그리드 띄우기/////////////////////////////////////////////////////////////////////////////////////////
-
+/*
     private void init() {
         recyclerView = findViewById(R.id.reserved_layout);
         reserve_ItemAdapter = new reserve_ItemAdapter();
@@ -151,6 +151,6 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
             //데이터 등록
             reserve_ItemAdapter.addItem(item);
         }
-    }
+    }*/
 }
 

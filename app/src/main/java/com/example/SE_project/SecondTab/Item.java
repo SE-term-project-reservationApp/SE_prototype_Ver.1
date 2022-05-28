@@ -4,15 +4,38 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Item {
-    ImageView imageview;
-    TextView textView;
-    public void setImage(ImageView imageview){
-        this.imageview=imageview;
+    String name="",intro="";
+    String uri="";
+    public Item()  {
 
     }
-    public void setText(TextView textView){
-        this.textView=textView;
 
+    public Item(String name,String intro){
+        this.name=name;
+        this.intro=intro;
+
+    }
+
+    public void setName(String name){
+        this.name=name;
+
+    }
+    public String getName(){
+        return name;
+    }
+    public void setIntro(String intro){
+        this.intro=intro;
+
+    }
+    public String getIntro(){
+        return intro;
+    }
+    public void setUri(String uri){
+        this.uri=uri;
+
+    }
+    public String getUri(){
+        return uri;
     }
 
 }

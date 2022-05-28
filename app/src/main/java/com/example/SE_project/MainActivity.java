@@ -1,5 +1,6 @@
 package com.example.SE_project;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.FragmentActivity;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
@@ -7,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -15,8 +17,15 @@ import com.example.SE_project.MyteamPage.MyAdapter;
 import com.example.SE_project.MyteamPage.myTeamPageActivity;
 import com.example.SE_project.SecondTab.Item;
 import com.example.SE_project.SecondTab.ItemAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.FirebaseApp;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
+import com.google.firebase.storage.FirebaseStorage;
 
 
 public class MainActivity extends FragmentActivity{
@@ -25,15 +34,16 @@ public class MainActivity extends FragmentActivity{
     private FragmentStateAdapter pagerAdapter;
     private int num_page = 3;
 
-    private RecyclerView recyclerView;
-    private ItemAdapter itemAdapter;
+     RecyclerView recyclerView;
+   ItemAdapter itemAdapter;
 
     //윤수 TAB 변수들 선언
     FloatingActionButton plus;
     FloatingActionButton myTeam;
     private Animation fab_open, fab_close;
     private Boolean isFabOpen = false;
-
+    private FirebaseStorage storage;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -130,17 +140,29 @@ public class MainActivity extends FragmentActivity{
         itemAdapter = new ItemAdapter();
         recyclerView.setAdapter(itemAdapter);
         //조회 전 화면 클리어
-        itemAdapter.removeAllItem();
         //샘플 데이터 생성
-        for(int i = 0; i < 20; i++){
-            Item item = new Item();
-            //데이터 등록
-            itemAdapter.addItem(item);
-        }
-        //적용
-        itemAdapter.notifyDataSetChanged();
+        db.collection("SF").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        Item item=document.toObject(Item.class);
+                        Log.d("아이템", item.getName());
+                        Log.d("아이템", item.getIntro());
+                        itemAdapter.addItem(item);
+                        itemAdapter.notifyDataSetChanged();
+                    }
+                }
+                else
+                {
+                    Log.d("실패","응 실패야",task.getException());
+                }
+            }
+        });
+       // itemAdapter.notifyDataSetChanged();
+       // Log.d("개수", String.valueOf(itemAdapter.getItemCount()));
         //애니메이션 실행
-        recyclerView.startLayoutAnimation();
+        //recyclerView.startLayoutAnimation();
     }
 
     //TAB 눌렀을 때 애니메이션

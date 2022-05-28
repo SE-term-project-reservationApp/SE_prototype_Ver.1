@@ -71,7 +71,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
         }
 
         public void setItem(Item item){
-            item.setText(title_view);
+            //item.setText(title_view);
         }
     }
 }

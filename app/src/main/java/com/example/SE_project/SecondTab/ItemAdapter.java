@@ -2,6 +2,7 @@ package com.example.SE_project.SecondTab;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,19 +42,21 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, int position) {
-        Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_row_lr);
-        ((ViewHolder) viewHolder).itemView.startAnimation(animation);
 
-        Item item = items.get(position);
-        viewHolder.setItem(item);
+            Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_row_lr);
+            ((ViewHolder) viewHolder).itemView.startAnimation(animation);
+            Item item = items.get(position);
+            viewHolder.setItem(item);
+            Log.d("확인", item.getName());
+            viewHolder.btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent booking_link_intent = new Intent(context, booking_Activity.class);
+                    booking_link_intent.putExtra("구장이름", item.getName());
+                    context.startActivity(booking_link_intent);
+                }
+            });
 
-        viewHolder.btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent booking_link_intent = new Intent(context, booking_Activity.class);
-                context.startActivity(booking_link_intent);
-            }
-        });
     }
 
     @Override
@@ -62,7 +65,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     }
 
     public void addItem(Item item){
-        items.add(item);
+        items.add(0,item);
     }
 
     public void removeAllItem(){
@@ -71,18 +74,20 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
     static class ViewHolder extends RecyclerView.ViewHolder{
 
-        TextView title_view;
+        TextView title_view,context_text;
         Button btn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
             title_view = itemView.findViewById(R.id.title_text);
+            context_text=itemView.findViewById(R.id.context_text);
             btn = itemView.findViewById(R.id.Booking_Gujang);
             // description = itemView.findViewById(R.id.desc_text);
         }
         public void setItem(Item item){
-            item.setText(title_view);
+            title_view.setText(item.getName());
+            context_text.setText(item.getIntro());
         }
     }
 }

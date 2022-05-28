@@ -1,19 +1,15 @@
-package com.example.tabmaking.Booking;
+package com.example.SE_project.Booking;
 
 
 import android.app.Activity;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.appcompat.app.AlertDialog;
-
-import com.example.tabmaking.MainActivity;
-import com.example.tabmaking.R;
+import com.example.SE_project.MainActivity;
+import com.example.SE_project.R;
 
 public class bookingComplete extends Activity {
 
@@ -31,8 +27,8 @@ public class bookingComplete extends Activity {
         tvYear = (TextView) findViewById(R.id.tvYear3);
         tvMonth = (TextView) findViewById(R.id.tvMonth3);
         tvDay = (TextView) findViewById(R.id.tvDay3);
-        tvHour = (TextView) findViewById(R.id.tvHour3);
-        tvMinute = (TextView) findViewById(R.id.tvMinute3);
+        tvHour = (TextView) findViewById(R.id.fromHour);
+        tvMinute = (TextView) findViewById(R.id.toHour);
 
         tvYear.setText((((booking_Activity)booking_Activity.DayContext).Year).toString());
         tvMonth.setText((((booking_Activity)booking_Activity.DayContext).Month).toString());

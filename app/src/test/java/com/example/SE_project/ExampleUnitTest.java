@@ -1,4 +1,4 @@
-package com.example.tabmaking;
+package com.example.SE_project;
 
 import org.junit.Test;
 

@@ -1,24 +1,32 @@
-package com.example.tabmaking.Booking;
+package com.example.SE_project.Booking;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
-import android.widget.TimePicker;
+import android.widget.Spinner;
+import android.widget.TextView;
 
-import androidx.appcompat.app.AppCompatActivity;
+import com.example.SE_project.R;
 
-import com.example.tabmaking.R;
 
 public class booking_Activity extends Activity {
 
     //Context로 다음 액티비티에서 정보 사용
     public static Context DayContext;
     DatePicker dPicker;
-    TimePicker tPicker;
+    Spinner tPicker;
+
+    // String arrays
+    String[] timeTable = {"8AM - 10AM", "10AM - 12AM", "12AM - 2PM", "2PM - 4PM", "4PM - 6PM", "6PM - 8PM", "8PM - 10PM"};
+
+
+
     Integer Year, Month, Day, Hour, Minute;
 
     Button btnToTable;
@@ -34,7 +42,27 @@ public class booking_Activity extends Activity {
 
         // FrameLayout의 2개 위젯
         dPicker = (DatePicker) findViewById(R.id.datePicker1);
-        tPicker = (TimePicker) findViewById(R.id.timePicker1);
+
+        tPicker = (Spinner) findViewById(R.id.timePicker1);
+        ArrayAdapter <String> menuAdapter = new ArrayAdapter<String>(this, R.layout.support_simple_spinner_dropdown_item,timeTable);
+        menuAdapter.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
+        tPicker.setAdapter(menuAdapter);
+//
+//        tPicker.setSelection(6);
+
+        tPicker.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //선택 시 작동기능
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Hour = position;
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+
 
 //        // 텍스트뷰 중에서 연,월,일,시,분 숫자
 //        tvYear = (TextView) findViewById(R.id.tvYear);
@@ -50,9 +78,6 @@ public class booking_Activity extends Activity {
                 Year = dPicker.getYear();
                 Month = 1 + dPicker.getMonth();
                 Day = dPicker.getDayOfMonth();
-
-                Hour = tPicker.getCurrentHour();
-                Minute = tPicker.getCurrentMinute();
 
                 //TODO 이거 되는 시간인지 확인!
 

@@ -1,4 +1,4 @@
-package com.example.tabmaking.FirstTab;
+package com.example.SE_project.FirstTab;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 
-import com.example.tabmaking.R;
+import com.example.SE_project.R;
 
 
 public class fragment_3 extends Fragment {

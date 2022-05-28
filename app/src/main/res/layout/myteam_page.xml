@@ -3,7 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/default_green">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -18,25 +19,18 @@
                 android:id="@+id/profile_image"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:src="@drawable/banner"/>
-            <TableLayout
+                android:src="@drawable/banner" />
+            <TextView
+                android:id="@+id/name"
+                android:text="팀이름을 넣어 주세요"
+                android:textColor="#13812B"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:layout_height="50dp"
                 android:layout_width="match_parent"
-                android:layout_height="150dp">
-                <TextView
-                    android:id="@+id/name"
-                    android:layout_height="50dp"
-                    android:textAlignment="center" />
+                android:textAlignment="center" />
 
-                <TextView
-                    android:id="@+id/email"
-                    android:layout_height="50dp"
-                    android:textAlignment="center" />
-
-                <TextView
-                    android:id="@+id/intro"
-                    android:layout_height="50dp"
-                    android:textAlignment="center" />
-            </TableLayout>
         </RelativeLayout>
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView

@@ -1,4 +1,4 @@
-package com.example.tabmaking.SecondTab;
+package com.example.SE_project.SecondTab;
 
 import android.widget.ImageView;
 import android.widget.TextView;

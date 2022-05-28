@@ -1,24 +1,22 @@
-package com.example.tabmaking.SecondTab;
+package com.example.SE_project.MyteamPage;
 
 import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
+        import android.view.LayoutInflater;
+        import android.view.View;
+        import android.view.ViewGroup;
+        import android.view.animation.Animation;
+        import android.view.animation.AnimationUtils;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
+        import androidx.annotation.NonNull;
+        import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tabmaking.Booking.booking_Activity;
-import com.example.tabmaking.R;
+import com.example.SE_project.R;
+import com.example.SE_project.SecondTab.Item;
 
 import java.util.ArrayList;
 
-public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
+public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapter.ViewHolder>{
 
     ArrayList<Item> items = new ArrayList<Item>();
 
@@ -33,7 +31,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
 
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
-        View itemView = inflater.inflate(R.layout.item_layout_lr, viewGroup, false);
+        View itemView = inflater.inflate(R.layout.reserve_item, viewGroup, false);
         context = viewGroup.getContext();
         return new ViewHolder(itemView);
 
@@ -46,14 +44,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
 
         Item item = items.get(position);
         viewHolder.setItem(item);
-
-        viewHolder.btn.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                Intent booking_link_intent = new Intent(context, booking_Activity.class);
-                context.startActivity(booking_link_intent);
-            }
-        });
     }
 
     @Override
@@ -72,15 +62,14 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         TextView title_view;
-        Button btn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
-            title_view = itemView.findViewById(R.id.title_text);
-            btn = itemView.findViewById(R.id.Booking_Gujang);
+            title_view = itemView.findViewById(R.id.reserve_name);
             // description = itemView.findViewById(R.id.desc_text);
         }
+
         public void setItem(Item item){
             item.setText(title_view);
         }

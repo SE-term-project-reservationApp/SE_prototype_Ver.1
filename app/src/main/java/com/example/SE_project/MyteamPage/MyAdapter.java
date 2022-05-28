@@ -1,13 +1,13 @@
-package com.example.tabmaking.MyteamPage;
+package com.example.SE_project.MyteamPage;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
-import com.example.tabmaking.FirstTab.fragment_1;
-import com.example.tabmaking.FirstTab.fragment_2;
-import com.example.tabmaking.FirstTab.fragment_3;
+import com.example.SE_project.FirstTab.fragment_1;
+import com.example.SE_project.FirstTab.fragment_2;
+import com.example.SE_project.FirstTab.fragment_3;
 
 public class MyAdapter extends FragmentStateAdapter {
 

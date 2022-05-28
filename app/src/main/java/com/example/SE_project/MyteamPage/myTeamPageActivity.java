@@ -1,4 +1,4 @@
-package com.example.tabmaking.MyteamPage;
+package com.example.SE_project.MyteamPage;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,9 +15,9 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.tabmaking.R;
-import com.example.tabmaking.SecondTab.Item;
-import com.example.tabmaking.SecondTab.ItemAdapter;
+import com.example.SE_project.R;
+import com.example.SE_project.SecondTab.Item;
+import com.example.SE_project.SecondTab.ItemAdapter;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
-    private com.example.tabmaking.MyteamPage.reserve_ItemAdapter reserve_ItemAdapter;
+    private com.example.SE_project.MyteamPage.reserve_ItemAdapter reserve_ItemAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,14 +50,9 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 //        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profile_img);
 //        riv.setImageBitmap(bm);
 
-        //프로필 정보 띄우기
+        //팀명 띄우기
         TextView nameSlot = findViewById(R.id.name);
-        TextView emailSlot = findViewById(R.id.email);
-        TextView introduction = findViewById(R.id.intro);
-        nameSlot.setText("MinHyugi");
-        emailSlot.setText("minhyuk9803@gmail.com");
-        introduction.setText("Hi, im cute");
-        //
+
         mContext = this;
         //밑에 사진 띄우기
         init();

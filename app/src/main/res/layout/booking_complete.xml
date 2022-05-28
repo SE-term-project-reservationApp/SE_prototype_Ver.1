@@ -11,12 +11,13 @@
         android:text="예약을 확정되었습니다!"
         android:textColor="#ffffff"
         android:textSize="25dp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
         android:orientation="vertical">
 
         <TextView
@@ -24,6 +25,26 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:text="귀하의 예약 정보입니다. 확인해주세요.\n" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="구장 이름: "
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/field_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="0000필드"
+                android:textSize="15dp" />
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -78,7 +99,20 @@
                 android:textSize="15dp" />
 
             <TextView
-                android:id="@+id/tvHour3"
+                android:id="@+id/fromHour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="00"
+                android:textSize="15dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="시 ~"
+                android:textSize="15dp" />
+
+            <TextView
+                android:id="@+id/toHour"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="00"
@@ -88,19 +122,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="시"
-                android:textSize="15dp" />
-
-            <TextView
-                android:id="@+id/tvMinute3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="00"
-                android:textSize="15dp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="분"
                 android:textSize="15dp" />
         </LinearLayout>
     </LinearLayout>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.tabmaking">
+    package="com.example.SE_project">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TabMaking">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.SE_project.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,10 +19,10 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".FirstTab.MatchActivity"/>
-        <activity android:name=".MyteamPage.myTeamPageActivity"/>
-        <activity android:name=".Booking.bookingComplete"/>
-        <activity android:name=".Booking.booking_Activity"/>
+        <activity android:name="com.example.SE_project.FirstTab.MatchActivity"/>
+        <activity android:name="com.example.SE_project.MyteamPage.myTeamPageActivity"/>
+        <activity android:name="com.example.SE_project.Booking.bookingComplete"/>
+        <activity android:name="com.example.SE_project.Booking.booking_Activity"/>
 
     </application>
 

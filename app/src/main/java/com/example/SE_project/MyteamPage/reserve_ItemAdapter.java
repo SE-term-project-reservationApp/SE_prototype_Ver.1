@@ -67,11 +67,11 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder viewHolder, @SuppressLint("RecyclerView") final int position) {
-
+        Local local = (Local)context.getApplicationContext();
         Animation animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_row_lr);
         ((ViewHolder) viewHolder).itemView.startAnimation(animation);
         ReservationItem item = items.get(position);
-        viewHolder.setItem(item);
+        viewHolder.setItem(item,local.getNickname());
 
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -137,9 +137,9 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
-
-        TextView title_view,text_view,text_time;
+        TextView title_view,text_view,text_time,info;
         RelativeLayout parentLayout;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
@@ -147,12 +147,22 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
             text_view = itemView.findViewById(R.id.reserve_text);
             text_time = itemView.findViewById(R.id.reserve_time);
             parentLayout = itemView.findViewById(R.id.parentLayout);
+            info=itemView.findViewById(R.id.info);
         }
 
-        public void setItem(ReservationItem item){
+        public void setItem(ReservationItem item,String teamname){
+            if(teamname.equals(item.getTeam()))
+            {
+
+            }
+            else
+            {
+                info.setText(teamname+" VS "+item.getTeam());
+            }
             title_view.setText(item.getName());
             text_view.setText(item.getAdress());
             text_time.setText(item.getTime());
+
         }
     }
 }

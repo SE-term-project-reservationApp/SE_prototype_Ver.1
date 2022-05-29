@@ -68,13 +68,13 @@
             android:id="@+id/firstTab"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="OMMG" />
+            android:text="MATCHING" />
 
         <com.google.android.material.tabs.TabItem
             android:id="@+id/secondTab"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="HI" />
+            android:text="RESERVATION" />
 
     </com.google.android.material.tabs.TabLayout>
 </LinearLayout>

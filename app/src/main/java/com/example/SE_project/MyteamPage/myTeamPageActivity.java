@@ -8,16 +8,25 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+import com.example.SE_project.Local;
 import com.example.SE_project.R;
 import com.example.SE_project.SecondTab.Item;
 import com.example.SE_project.SecondTab.ItemAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.io.File;
 import java.io.IOException;
@@ -32,7 +41,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
     private static final int CROP_FROM_CAMERA = 2;
     private Uri mImageCaptureUri;
     private ImageView mPressProfileImg;
-
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
     private com.example.SE_project.MyteamPage.reserve_ItemAdapter reserve_ItemAdapter;
@@ -41,10 +50,12 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myteam_page);
-
+        Local local = (Local) getApplication();
         //프로필 이미지 띄우기
+        Uri a=Uri.parse(local.getUri());
         mPressProfileImg = findViewById(R.id.profile_image);
-
+        Glide.with(myTeamPageActivity.this).load(a).into(mPressProfileImg);
+        mPressProfileImg.setOnClickListener(this);
 
 //        RoundImageView riv = findViewById(R.id.round_profile_image);
 //        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profile_img);
@@ -52,10 +63,10 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 
         //팀명 띄우기
         TextView nameSlot = findViewById(R.id.name);
-
+        nameSlot.setText(local.getUsername());
         mContext = this;
         //밑에 사진 띄우기
-        //init();
+        init();
     }
     //프로필 이미지 설정 methods/////////////////////////////////////////////////////////////////
     /**
@@ -138,19 +149,29 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
                 .show();
     }
     //밑에 사진 그리드 띄우기/////////////////////////////////////////////////////////////////////////////////////////
-/*
     private void init() {
+        Local local = (Local) getApplication();
         recyclerView = findViewById(R.id.reserved_layout);
         reserve_ItemAdapter = new reserve_ItemAdapter();
         recyclerView.setAdapter(reserve_ItemAdapter);
         //조회 전 화면 클리어
-        reserve_ItemAdapter.removeAllItem();
         //샘플 데이터 생성
-        for(int i = 0; i < 20; i++){
-            Item item = new Item();
-            //데이터 등록
-            reserve_ItemAdapter.addItem(item);
-        }
-    }*/
+        db.collection("User").document(local.getNickname()).collection(local.getUsername()).get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if(task.isSuccessful()){
+                    for(QueryDocumentSnapshot document:task.getResult()){
+                        ReservationItem item=document.toObject(ReservationItem.class);
+                        reserve_ItemAdapter.addItem(item);
+                        reserve_ItemAdapter.notifyDataSetChanged();
+                    }
+                }
+                else
+                {
+                    Log.d("실패","응 실패야",task.getException());
+                }
+            }
+        });
+    }
 }
 

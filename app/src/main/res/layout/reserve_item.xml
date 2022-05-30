@@ -21,18 +21,31 @@
             android:orientation="vertical">
             <TextView
                 android:id="@+id/reserve_name"
-                android:layout_margin="10dp"
+                android:layout_margin="5dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:text="구장 예약 상황" />
             <TextView
+                android:id="@+id/info"
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp" />
+            <TextView
                 android:id="@+id/reserve_text"
-                android:layout_margin="10dp"
+                android:layout_margin="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textSize="14dp"
-                android:text="정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ\n정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ\n" />
+                 />
+            <TextView
+                android:id="@+id/reserve_time"
+                android:layout_margin="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="14dp"
+                />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

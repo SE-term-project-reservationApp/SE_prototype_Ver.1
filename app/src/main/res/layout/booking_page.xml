@@ -29,14 +29,16 @@
         <DatePicker
             android:id="@+id/datePicker1"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="350dp"
             android:layout_gravity="center"
             android:datePickerMode="spinner" />
 
         <Spinner
+            android:layout_marginTop="50dp"
             android:id="@+id/timePicker1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="100dp"
+            android:layout_gravity="center"
             android:spinnerMode="dropdown" />
 
     </LinearLayout>
@@ -52,7 +54,7 @@
         android:id="@+id/BtnToTable"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="다음 단계로"
+        android:text="다음 단계"
         android:layout_gravity="center_horizontal"/>
 
 

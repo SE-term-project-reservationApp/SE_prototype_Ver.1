@@ -16,31 +16,34 @@
         android:backgroundTint="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/title_text"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20dp"
-                android:text="천마 풋살 파크" />
+                android:layout_margin="10dp"
+                android:textSize="20dp" />
+
             <TextView
                 android:id="@+id/context_text"
-                android:layout_margin="10dp"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="14dp"
-                android:text="정보가 들어가는 공간입니다 일단 텍스트로 채워볼게요 ㅎㅎㅎㅎ" />
+                android:layout_margin="10dp"
+                android:textSize="14dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/Booking_Gujang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
+                android:layout_gravity="left"
+                android:layout_marginLeft="30dp"
                 android:text="예약하기" />
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

@@ -83,7 +83,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
                 android:ems="10"
-                android:hint="nickname"
+                android:hint="teamname"
                 android:inputType="textPersonName" />
 
             <Button

@@ -14,7 +14,7 @@ import com.example.SE_project.R;
 public class bookingComplete extends Activity {
 
     //daytime 에서 가져올 변수
-    TextView tvYear, tvMonth, tvDay, tvToHour, tvFromHour,Hour;
+    TextView tvYear, tvMonth, tvDay, tvToHour, tvFromHour,Hour,address,fieldname;
     Button btnFinish;
 
     @Override
@@ -28,11 +28,14 @@ public class bookingComplete extends Activity {
         tvMonth = (TextView) findViewById(R.id.tvMonth3);
         tvDay = (TextView) findViewById(R.id.tvDay3);
         Hour= (TextView) findViewById(R.id.Hour);
-
+        address=(TextView) findViewById(R.id.field_address);
+        fieldname=(TextView) findViewById(R.id.field_name);
         tvYear.setText((((booking_Activity)booking_Activity.DayContext).Year).toString());
         tvMonth.setText((((booking_Activity)booking_Activity.DayContext).Month).toString());
         tvDay.setText((((booking_Activity)booking_Activity.DayContext).Day).toString());
         Hour.setText((((booking_Activity)booking_Activity.DayContext).Hour).toString());
+        address.setText((((booking_Activity)booking_Activity.DayContext).address).toString());
+        fieldname.setText((((booking_Activity)booking_Activity.DayContext).fieldname).toString());
 
         btnFinish = (Button)findViewById(R.id.BtnFinish);
         btnFinish.setOnClickListener(new View.OnClickListener() {

@@ -35,7 +35,6 @@
                     android:id="@+id/match_team"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="땡땡 FC"
                     android:textAlignment="textStart"
                     android:textColor="#EBDBC4"
                     android:textSize="40dp"
@@ -112,7 +111,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:text="00000000구장"
                     android:textColor="#BDBDBD"
                     android:textSize="20dp"
                     android:textStyle="bold|italic" />
@@ -137,12 +135,17 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
-                    android:text="00 대 00"
+                    android:text="11 대 11"
                     android:textColor="#BDBDBD"
                     android:textSize="20dp"
                     android:textStyle="bold|italic" />
             </LinearLayout>
         </LinearLayout>
+        <ImageView
+            android:id="@+id/image"
+            android:src="@drawable/gam"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"></ImageView>
     </LinearLayout>
 
     <androidx.appcompat.widget.AppCompatButton

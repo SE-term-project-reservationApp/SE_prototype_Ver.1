@@ -9,7 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:gravity="center"
-        android:text="MAIN"
+        android:text="어플 이름"
         android:textSize="24sp" />
 
     <LinearLayout
@@ -23,7 +23,7 @@
             android:id="@+id/loginBB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="login" />
+            android:text="시작하기" />
 
     </LinearLayout>
 

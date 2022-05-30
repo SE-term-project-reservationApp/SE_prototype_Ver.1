@@ -15,7 +15,6 @@ import android.view.animation.AnimationUtils;
 
 import com.example.SE_project.FirstTab.ViewpagerAdapter;
 import com.example.SE_project.Login.User;
-import com.example.SE_project.MyteamPage.MyAdapter;
 import com.example.SE_project.MyteamPage.ReservationItem;
 import com.example.SE_project.MyteamPage.myTeamPageActivity;
 import com.example.SE_project.SecondTab.Item;

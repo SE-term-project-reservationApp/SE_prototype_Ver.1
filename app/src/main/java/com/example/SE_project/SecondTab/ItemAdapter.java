@@ -2,6 +2,8 @@ package com.example.SE_project.SecondTab;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +50,21 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
             Item item = items.get(position);
             viewHolder.setItem(item);
             Log.d("확인", item.getName());
+
+            //TODO 사진 파일에서 데이터 베이스 아이템으로 바꾸기!
+//        Bitmap pic = null;
+//        try{
+//            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.P){
+//                pic = ImageDecoder.decodeBitmap(ImageDecoder.createSource(context.getContentResolver(), imageUri넣으셈));
+//            }else{
+//                pic = MediaStore.Images.Media.getBitmap(context.getContentResolver(),imageUri넣어);
+//            }
+//        }catch (IOException e){
+//            e.printStackTrace();
+//        }
+            Bitmap pic = BitmapFactory.decodeResource(context.getResources(), R.drawable.b);
+            Bitmap scale_pic = Bitmap.createScaledBitmap( pic, 50, 75, true);
+            //
             viewHolder.btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "1066088308154",
+    "project_id": "se-project-33702",
+    "storage_bucket": "se-project-33702.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066088308154:android:64765e847d4cb1d5e05183",
+        "android_client_info": {
+          "package_name": "com.example.SE_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066088308154-i30pak05hi20mho27ajhesacaeqc3v7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhv5ftV4KBHql9CkRpX6yrxUbPGmQjePk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066088308154-i30pak05hi20mho27ajhesacaeqc3v7l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1066088308154:android:dd7878f0ed2a11e0e05183",
+        "android_client_info": {
+          "package_name": "com.example.tabmaking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1066088308154-i30pak05hi20mho27ajhesacaeqc3v7l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhv5ftV4KBHql9CkRpX6yrxUbPGmQjePk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1066088308154-i30pak05hi20mho27ajhesacaeqc3v7l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

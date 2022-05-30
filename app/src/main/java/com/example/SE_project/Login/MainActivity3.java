@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.Settings;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,7 +17,6 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
 import com.example.SE_project.R;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -38,7 +38,13 @@ public class MainActivity3 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         checkPermission();
         Button bt = findViewById((R.id.loginBB));
-
+        try {
+            Thread.sleep(2000); //대기 초 설정
+            startActivity(new Intent(MainActivity3.this, LoginActivity.class));
+            finish();
+        } catch (Exception e) {
+            Log.e("Error", "SplashActivity ERROR", e);
+        }
         //그냥 로그인 버튼
         bt.setOnClickListener(new View.OnClickListener() {
             @Override

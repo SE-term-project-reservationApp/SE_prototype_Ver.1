@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -19,11 +20,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.SE_project.Local;
+import com.example.SE_project.Login.LoginActivity;
 import com.example.SE_project.R;
 import com.example.SE_project.SecondTab.Item;
 import com.example.SE_project.SecondTab.ItemAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -35,7 +38,7 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
 
     private Context mContext;
     private RecyclerView my_album;
-
+    private FirebaseAuth mAuth;
     private static final int PICK_FROM_CAMERA = 0;
     private static final int PICK_FROM_ALBUM = 1;
     private static final int CROP_FROM_CAMERA = 2;
@@ -45,18 +48,19 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
     private RecyclerView recyclerView;
     private ItemAdapter itemAdapter;
     private com.example.SE_project.MyteamPage.reserve_ItemAdapter reserve_ItemAdapter;
-
+    Button logout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.myteam_page);
+        mAuth = FirebaseAuth.getInstance();
         Local local = (Local) getApplication();
         //프로필 이미지 띄우기
         Uri a=Uri.parse(local.getUri());
         mPressProfileImg = findViewById(R.id.profile_image);
         Glide.with(myTeamPageActivity.this).load(a).into(mPressProfileImg);
         mPressProfileImg.setOnClickListener(this);
-
+        logout = findViewById(R.id.logoutB);
 //        RoundImageView riv = findViewById(R.id.round_profile_image);
 //        Bitmap bm = BitmapFactory.decodeResource(getResources(), R.drawable.profile_img);
 //        riv.setImageBitmap(bm);
@@ -67,6 +71,16 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
         mContext = this;
         //밑에 사진 띄우기
         init();
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                signOut();
+                Intent intent3 = new Intent(myTeamPageActivity.this, LoginActivity.class);
+                //로그아웃누르면  로그인화면으로 이동
+                startActivity(intent3);
+            }
+        });
+
     }
     //프로필 이미지 설정 methods/////////////////////////////////////////////////////////////////
     /**
@@ -172,6 +186,11 @@ public class myTeamPageActivity extends AppCompatActivity implements View.OnClic
                 }
             }
         });
+    }
+    ///로그아웃
+
+    private void signOut() {
+        mAuth.signOut();
     }
 }
 

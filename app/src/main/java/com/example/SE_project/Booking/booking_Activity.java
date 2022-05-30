@@ -146,7 +146,7 @@ public class booking_Activity extends Activity {
                 Log.d("년",String.valueOf(Day));
                 information=Year+"년 "+Month+"월 "+Day+"일 "+Hour;
                 Log.d("결과",String.valueOf(information));
-                db.collection("SF").document(name).collection("예약자").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                db.collection("SF").document(name).collection("예약정보").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if(task.isSuccessful()){
@@ -189,7 +189,7 @@ public class booking_Activity extends Activity {
                 Local local = (Local) getApplication();
                 Reservation a=new Reservation(local.getUsername(),information);
                 ReservationItem b=new ReservationItem(name,address,information,local.getNickname());
-                db.collection("SF").document(name).collection(local.getUsername()).document(information).set(a);
+                db.collection("SF").document(name).collection("예약정보").document(information).set(a);
                 db.collection("User").document(local.getNickname()).collection(local.getUsername()).document(name+information).set(b);
                 Intent intent = new Intent(booking_Activity.this, bookingComplete.class); //다음 Table클래스 정보 입력
                 startActivity(intent);//다음 액티비티 화면에 출력

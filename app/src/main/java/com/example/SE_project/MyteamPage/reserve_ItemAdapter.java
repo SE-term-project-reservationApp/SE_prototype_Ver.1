@@ -105,7 +105,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
             public void onClick(View view){
                 Local local = (Local)context.getApplicationContext();
                 ReservationItem a = new ReservationItem(name,address,time,local.getNickname());
-                db.collection("need").document(local.getNickname()).set(a);
+                db.collection("need").document(local.getNickname()+name+time).set(a);
                 Toast.makeText(context, "업로드되었습니다.", Toast.LENGTH_SHORT).show();
                 //dialog.dismiss();
             }

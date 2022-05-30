@@ -56,7 +56,7 @@ public class ViewpagerAdapter extends RecyclerView.Adapter<ViewpagerAdapter.View
             public void onClick(View view) {
                 Reservation a=new Reservation(local.getUsername(),items.get(position).getTime());
                 ReservationItem b=new ReservationItem(items.get(position).getName(),items.get(position).getAdress(),items.get(position).getTime(),items.get(position).getTeam());
-                db.collection("SF").document(items.get(position).getName()).collection(local.getUsername()).document(items.get(position).getTime()).set(a);
+                db.collection("SF").document(items.get(position).getName()).collection("예약정보").document(items.get(position).getTime()).set(a);
                 db.collection("User").document(local.getNickname()).collection(local.getUsername()).document(items.get(position).getName()+items.get(position).getTime()).set(b);
                items.remove(position);
                notifyDataSetChanged();

@@ -97,12 +97,12 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
         viewHolder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                popupXml(items.get(position).getName(),items.get(position).getAdress(),items.get(position).getTime());
+                popupXml(items.get(position).getName(),items.get(position).getAdress(),items.get(position).getTime(),position);
             }
         });
     }
 
-    public void popupXml(String name,String address,String time ) {
+    public void popupXml(String name,String address,String time, int position ) {
         //Log.d(TAG, "okay");
         Local local = (Local)context.getApplicationContext();
         LayoutInflater inflater = LayoutInflater.from(context);
@@ -120,7 +120,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
         d.setText(address);
         e.setText(time);
         Button upload=view.findViewById(R.id.upload);
-
+        Button cancel=view.findViewById(R.id.cancel);
         upload.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View view){
@@ -131,6 +131,45 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
                 //dialog.dismiss();
             }
         });
+        cancel.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View view){
+                db.collection("SF").document(name).collection("예약정보").document(time)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully deleted!");
+                                notifyDataSetChanged();
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting document", e);
+                            }
+                        });
+                db.collection("User").document(local.getNickname()).collection(local.getUsername()).document(name+time)
+                        .delete()
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void aVoid) {
+                                Log.d(TAG, "DocumentSnapshot successfully deleted!");
+
+                            }
+                        })
+                        .addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull Exception e) {
+                                Log.w(TAG, "Error deleting document", e);
+                            }
+                        });
+                Toast.makeText(context, "예약이 취소되었습니다.", Toast.LENGTH_SHORT).show();
+                items.remove(position);
+                notifyDataSetChanged();
+            }
+        });
+
         builder.setTitle("팀구하기").setView(view);
         builder.setNegativeButton("닫기", new DialogInterface.OnClickListener() {
             @Override

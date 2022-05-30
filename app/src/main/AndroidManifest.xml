@@ -13,11 +13,7 @@
         <activity
             android:name="com.example.SE_project.Login.MainActivity3"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity android:name="com.example.SE_project.FirstTab.MatchActivity"/>
@@ -28,6 +24,17 @@
         <activity android:name=".Login.LoginActivity"></activity>
         <activity android:name=".MainActivity"></activity>
         <activity android:name=".Login.SignupActivity"></activity>
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/SplashActivityTheme"
+            android:exported="true">
+            <intent-filter>
+                <action
+                    android:name="android.intent.action.MAIN">
+                </action>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
     </application>
 

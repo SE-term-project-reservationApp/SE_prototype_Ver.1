@@ -20,7 +20,7 @@
             android:layout_gravity="top|right"
             android:layout_margin="15dp"
             android:src="@drawable/plus"
-            app:backgroundTint="@color/purple_200"
+            app:backgroundTint="@color/button_green"
             tools:ignore="MissingConstraints" />
 
 
@@ -33,7 +33,7 @@
             android:layout_marginTop="90dp"
             android:src="@drawable/team"
             android:visibility="invisible"
-            app:backgroundTint="#ffffff"
+            app:backgroundTint="@color/button_green"
             app:elevation="6dp"
             app:pressedTranslationZ="12dp"
             tools:ignore="MissingConstraints" />
@@ -41,14 +41,14 @@
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/frameSize"
+            android:layout_height="match_parent"
             android:clipChildren="false"
             android:clipToPadding="false" />
         <!--준혁-->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/frameSize"
+            android:layout_height="match_parent"
             android:clipChildren="false"
             android:clipToPadding="false"
             android:layoutAnimation="@anim/item_layout_animation"

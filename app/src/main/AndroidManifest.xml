@@ -17,7 +17,9 @@
         </activity>
 
         <activity android:name="com.example.SE_project.FirstTab.MatchActivity"/>
-        <activity android:name="com.example.SE_project.MyteamPage.myTeamPageActivity"/>
+        <activity android:name="com.example.SE_project.MyteamPage.myTeamPageActivity"
+            android:theme="@style/SplashActivityTheme"
+            android:exported="true"/>
         <activity android:name="com.example.SE_project.Booking.bookingComplete"/>
         <activity android:name="com.example.SE_project.Booking.booking_Activity"/>
         <activity android:name=".Login.FindPW"></activity>

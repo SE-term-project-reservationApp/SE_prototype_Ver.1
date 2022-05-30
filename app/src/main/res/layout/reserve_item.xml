@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/parentLayout">
+    android:id="@+id/parentLayout"
+    android:background="@color/default_green">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
@@ -52,6 +53,7 @@
                     android:textSize="14dp" />
             </LinearLayout>
             <ImageView
+                android:scaleType="fitXY"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"

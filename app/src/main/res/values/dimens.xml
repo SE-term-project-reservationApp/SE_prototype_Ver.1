@@ -4,5 +4,5 @@
     <dimen name="offset">20dp</dimen>
     <dimen name="pageMarginAndOffset">20dp</dimen>
     <!--바꾸기-->
-    <dimen name="frameSize">600dp</dimen>
+    <dimen name="frameSize">670dp</dimen>
 </resources>

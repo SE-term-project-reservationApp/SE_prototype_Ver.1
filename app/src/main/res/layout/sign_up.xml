@@ -18,60 +18,81 @@
         android:layout_margin="10dp"
         android:orientation="vertical"
         android:padding="10dp">
-        <EditText
-            android:id="@+id/name"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="name"
-            android:inputType="textPersonName" />
+            android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/name"
+                android:background="#00000000"
+                android:ems="10"
+                android:hint="이름" />
+        </com.google.android.material.textfield.TextInputLayout>
+
 
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+           >
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="260dp"
+                android:layout_height="wrap_content">
 
-            <EditText
-                android:id="@+id/ID"
-                android:layout_width="262dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="3dp"
-                android:ems="10"
-                android:hint="e-mail"
-                android:inputType="textEmailAddress" />
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ID"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#00000000"
+                    android:ems="10"
+                    android:hint="email"
+                    android:inputType="textEmailAddress" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <Button
                 android:id="@+id/sb"
-                android:layout_width="52dp"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="2dp"
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
                 android:text="인증"
-                android:textSize="8dp" />
+                android:textSize="4dp"
+                android:layout_marginRight="5dp"/>
 
             <Button
                 android:id="@+id/checking"
-                android:layout_width="52dp"
-                android:layout_height="wrap_content"
+                android:layout_width="42dp"
+                android:layout_height="match_parent"
                 android:text="완료"
-                android:textSize="8dp" />
+                android:textSize="4dp" />
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/pw"
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="password"
-            android:inputType="textPassword" />
+            android:layout_height="wrap_content">
 
-        <EditText
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/pw"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#00000000"
+                android:ems="10"
+                android:hint="비밀번호"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/pwc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#00000000"
             android:ems="10"
-            android:hint="password-confirm"
+            android:hint="비밀번호 확인"
             android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -83,7 +104,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginRight="3dp"
                 android:ems="10"
-                android:hint="teamname"
+                android:hint="Team name"
                 android:inputType="textPersonName" />
 
             <Button
@@ -91,8 +112,8 @@
                 android:layout_width="64dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="2dp"
-                android:text="중복확인"
-                android:textSize="8dp" />
+                android:text="중복 체크"
+                android:textSize="7dp" />
 
         </LinearLayout>
         <EditText

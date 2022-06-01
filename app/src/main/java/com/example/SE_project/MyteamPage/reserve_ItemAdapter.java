@@ -62,13 +62,12 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
 
     @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-
+        public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(viewGroup.getContext());
         View itemView = inflater.inflate(R.layout.reserve_item, viewGroup, false);
         context = viewGroup.getContext();
-        return new ViewHolder(itemView);
 
+        return new ViewHolder(itemView);
     }
 
     @Override
@@ -197,10 +196,10 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        TextView title_view,text_view,text_time,info;
+        private TextView title_view,text_view,text_time,info;
         RelativeLayout parentLayout;
 
-        public ViewHolder(@NonNull View itemView) {
+        ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
             title_view = itemView.findViewById(R.id.reserve_name);
@@ -220,7 +219,9 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
                 info.setText(teamname+" VS "+item.getTeam());
             }
             title_view.setText(item.getName());
+            Log.d("이름", item.getName());
             text_view.setText(item.getAdress());
+
             text_time.setText(item.getTime());
 
         }

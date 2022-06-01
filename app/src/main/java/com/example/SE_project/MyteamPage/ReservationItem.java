@@ -3,16 +3,17 @@ package com.example.SE_project.MyteamPage;
 public class ReservationItem {
     String name="",adress="";
     String time="",team="";
+    String uri="";
     public ReservationItem()  {
 
     }
 
-    public ReservationItem(String name,String adress,String time,String team){
+    public ReservationItem(String name,String adress,String time,String team,String uri){
         this.name=name;
         this.adress=adress;
         this.time=time;
         this.team=team;
-
+        this.uri=uri;
     }
 
     public void setName(String name){
@@ -42,6 +43,13 @@ public class ReservationItem {
     }
     public String getTeam(){
         return team;
+    }
+    public void setUri(String uri){
+        this.uri=uri;
+
+    }
+    public String getUri(){
+        return uri;
     }
 
 

@@ -125,7 +125,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
             @Override
             public void onClick(View view){
                 Local local = (Local)context.getApplicationContext();
-                ReservationItem a = new ReservationItem(name,address,time,local.getNickname());
+                ReservationItem a = new ReservationItem(name,address,time,local.getNickname(),"");
                 db.collection("need").document(local.getNickname()+name+time).set(a);
                 Toast.makeText(context, "업로드되었습니다.", Toast.LENGTH_SHORT).show();
                 //dialog.dismiss();
@@ -196,7 +196,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
         items.clear();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder{
         TextView title_view,text_view,text_time,info;
         RelativeLayout parentLayout;
 

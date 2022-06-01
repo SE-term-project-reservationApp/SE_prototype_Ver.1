@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,11 +12,13 @@ import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.SE_project.Booking.booking_Activity;
 import com.example.SE_project.R;
 
@@ -70,7 +73,8 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
                 public void onClick(View view) {
                     Intent booking_link_intent = new Intent(context, booking_Activity.class);
                     booking_link_intent.putExtra("구장이름", item.getName());
-                    booking_link_intent.putExtra("구장주소", item.getIntro());
+                    booking_link_intent.putExtra("구장주소", item.getAddress());
+                    booking_link_intent.putExtra("구장사진", item.getUri());
                     context.startActivity(booking_link_intent);
                 }
             });
@@ -90,22 +94,27 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
         items.clear();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
-
+   class ViewHolder extends RecyclerView.ViewHolder{
         TextView title_view,context_text;
         Button btn;
-
+        ImageView img;
+        Uri u;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
             title_view = itemView.findViewById(R.id.title_text);
             context_text=itemView.findViewById(R.id.context_text);
             btn = itemView.findViewById(R.id.Booking_Gujang);
+            img=itemView.findViewById(R.id.img);
             // description = itemView.findViewById(R.id.desc_text);
         }
         public void setItem(Item item){
             title_view.setText(item.getName());
-            context_text.setText(item.getIntro());
+            context_text.setText(item.getAddress());
+            u=Uri.parse(item.getUri());
+            Glide.with(context)
+                    .load(u)
+                    .into(img);
         }
     }
 }

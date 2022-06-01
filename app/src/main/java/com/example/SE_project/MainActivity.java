@@ -33,6 +33,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.ListResult;
 import com.google.firebase.storage.StorageReference;
 
 
@@ -72,7 +73,6 @@ public class MainActivity extends FragmentActivity{
                         local.setIntro(user.getIntro());
                         local.setNickname(user.getNickname());
                         Log.d("uri세팅", local.getUri());
-
                     }
                 }
                 else
@@ -81,6 +81,35 @@ public class MainActivity extends FragmentActivity{
                 }
             }
         });
+        StorageReference listRef = FirebaseStorage.getInstance().getReference().child("sfield");
+        listRef.listAll()
+                .addOnSuccessListener(new OnSuccessListener<ListResult>() {
+                    @Override
+                    public void onSuccess(ListResult listResult) {
+
+                        // 폴더 내의 item이 동날 때까지 모두 가져온다.
+                        for (StorageReference item : listResult.getItems()) {
+                            // reference의 item(이미지) url 받아오기
+                            item.getDownloadUrl().addOnCompleteListener(new OnCompleteListener<Uri>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Uri> task) {
+                                    if (task.isSuccessful()) {
+                                        // Glide 이용하여 이미지뷰에 로딩
+                                        Log.d("천마",task.getResult().toString());
+                                    } else {
+                                        // URL을 가져오지 못하면 토스트 메세지
+                                    }
+                                }
+                            }).addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
+                                    // Uh-oh, an error occurred!
+                                }
+                            });
+                        }
+                    }
+                });
+
 
         //1번 탭 미리 표시
         firstView();

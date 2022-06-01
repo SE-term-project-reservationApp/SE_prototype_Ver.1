@@ -53,7 +53,7 @@ public class booking_Activity extends Activity {
     String Hour,information;
     Button btnToTable;
     Button btnDayOk;
-    String address,fieldname;
+    String address,fieldname,uri;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -63,6 +63,7 @@ public class booking_Activity extends Activity {
         DayContext = this;
         String name=getIntent().getStringExtra("구장이름");
         address=getIntent().getStringExtra("구장주소");
+        uri=getIntent().getStringExtra("구장사진");
         fieldname=name;
         // FrameLayout의 2개 위젯
         dPicker = (DatePicker) findViewById(R.id.datePicker1);
@@ -188,7 +189,7 @@ public class booking_Activity extends Activity {
                 //Intent
                 Local local = (Local) getApplication();
                 Reservation a=new Reservation(local.getUsername(),information);
-                ReservationItem b=new ReservationItem(name,address,information,local.getNickname());
+                ReservationItem b=new ReservationItem(name,address,information,local.getNickname(),uri);
                 db.collection("SF").document(name).collection("예약정보").document(information).set(a);
                 db.collection("User").document(local.getNickname()).collection(local.getUsername()).document(name+information).set(b);
                 Intent intent = new Intent(booking_Activity.this, bookingComplete.class); //다음 Table클래스 정보 입력

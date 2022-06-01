@@ -4,16 +4,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Item {
-    String name="",intro="";
+    String name="",address="";
     String uri="";
     public Item()  {
 
     }
 
-    public Item(String name,String intro){
+    public Item(String name,String address,String uri){
         this.name=name;
-        this.intro=intro;
-
+        this.address=address;
+        this.uri=uri;
     }
 
     public void setName(String name){
@@ -23,12 +23,12 @@ public class Item {
     public String getName(){
         return name;
     }
-    public void setIntro(String intro){
-        this.intro=intro;
+    public void setAddress(String address){
+        this.address=address;
 
     }
-    public String getIntro(){
-        return intro;
+    public String getAddress(){
+        return address;
     }
     public void setUri(String uri){
         this.uri=uri;

@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="로그인"
             android:layout_gravity="center"
-            android:background="@color/button_green"
+            android:background="@drawable/btn_option"
             android:visibility="visible"
             android:textColor="#ffffff"/>
         <TextView

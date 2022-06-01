@@ -80,7 +80,7 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
             });
 
     }
-
+//aa
     @Override
     public int getItemCount() {
         return items.size();

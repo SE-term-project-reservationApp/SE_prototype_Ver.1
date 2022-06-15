@@ -97,6 +97,7 @@ public class ViewpagerAdapter extends RecyclerView.Adapter<ViewpagerAdapter.View
 
         TextView title_view,text_view,text_time,match_team;
         Button match;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
@@ -108,8 +109,7 @@ public class ViewpagerAdapter extends RecyclerView.Adapter<ViewpagerAdapter.View
         }
 
         public void setItem(ReservationItem item){
-            title_view.setText(item.getName());
-            text_view.setText(item.getAdress());
+            text_view.setText(item.getName());
             text_time.setText(item.getTime());
             match_team.setText(item.getTeam());
         }

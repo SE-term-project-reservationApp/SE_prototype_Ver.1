@@ -59,8 +59,7 @@
                 android:layout_margin="3dp"
                 android:layout_weight="3"
                 android:gravity="end"
-                android:id="@+id/img"
-                android:src="@drawable/b" />
+                android:id="@+id/img" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </RelativeLayout>

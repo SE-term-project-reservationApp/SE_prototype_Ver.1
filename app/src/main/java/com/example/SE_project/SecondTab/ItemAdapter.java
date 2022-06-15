@@ -1,10 +1,13 @@
 package com.example.SE_project.SecondTab;
 
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ImageDecoder;
 import android.net.Uri;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,8 +23,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.example.SE_project.Booking.booking_Activity;
+import com.example.SE_project.MyteamPage.myTeamPageActivity;
 import com.example.SE_project.R;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
@@ -101,20 +107,33 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ViewHolder>{
         Uri u;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            //imageView=itemView.findViewById(R.id.b_image);
+            // imageView=itemView.findViewById(R.id.b_image);
             title_view = itemView.findViewById(R.id.title_text);
             context_text=itemView.findViewById(R.id.context_text);
             btn = itemView.findViewById(R.id.Booking_Gujang);
             img=itemView.findViewById(R.id.img);
+
             // description = itemView.findViewById(R.id.desc_text);
         }
         public void setItem(Item item){
             title_view.setText(item.getName());
             context_text.setText(item.getAddress());
-            u=Uri.parse(item.getUri());
-            Glide.with(context)
-                    .load(u)
-                    .into(img);
+            if(item.getName().equals("천마 풋살 파크")){
+                img.setImageResource(R.drawable.cheonma);
+            }
+            else if(item.getName().equals("아차산 배수지 체육공원")){
+                img.setImageResource(R.drawable.mt_acha);
+            }
+            else if(item.getName().equals("서울 상암 월드컵")){
+                img.setImageResource(R.drawable.seoul_world_cup);
+            }
+            else if(item.getName().equals("가천대학교 운동장")){
+                img.setImageResource(R.drawable.gachon);
+            }
+            else if(item.getName().equals("가양 레포츠 센터 축구장")){
+                img.setImageResource(R.drawable.gayang);
+            }
+
         }
     }
 }

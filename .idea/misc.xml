@@ -3,13 +3,37 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/activity_main.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/item_layout_lr.xml" value="0.17916666666666667" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/match_info.xml" value="0.264" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/myteam_page.xml" value="0.21481481481481482" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/popup.xml" value="0.18611111111111112" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.132424235/app/src/main/res/layout/reserve_item.xml" value="0.18611111111111112" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/activity_main.xml" value="0.21574074074074073" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/booking_complete.xml" value="0.4031141868512111" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/booking_page.xml" value="0.196875" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/fragment_1.xml" value="0.2375" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/item_layout_lr.xml" value="0.23802083333333332" />
-        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/match_info.xml" value="0.12604166666666666" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/match_info.xml" value="0.2" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/match_info2.xml" value="0.2375" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/match_info3.xml" value="0.2375" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/myteam_page.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/popup.xml" value="0.25833333333333336" />
         <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/reserve_item.xml" value="0.21927083333333333" />
+        <entry key="..\:/Users/82109/AndroidStudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/sign_up.xml" value="0.21666666666666667" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/activity_main.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/activity_main2.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/booking_complete.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/booking_page.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/find_pw.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/fragment_1.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/item_layout_lr.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/login.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/match_info.xml" value="0.3458333333333333" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/myteam_page.xml" value="0.16983695652173914" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/popup.xml" value="0.26614583333333336" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/reserve_item.xml" value="0.2953125" />
+        <entry key="..\:/Users/Cert/AndroidStudioProjects/SE_prototype_Ver.1/app/src/main/res/layout/sign_up.xml" value="0.16818642350557245" />
         <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/activity_main.xml" value="0.20833333333333334" />
         <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/fragment_1.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/HeeChan/AndroidStudioProjects/SE_Rebuild/app/src/main/res/layout/item_layout_lr.xml" value="0.4361413043478261" />
@@ -29,6 +53,23 @@
         <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.1/app/src/main/res/layout/myteam_page.xml" value="0.33" />
         <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.1/app/src/main/res/layout/reserve_item.xml" value="0.2692502532928065" />
         <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.1/app/src/main/res/layout/reserve_page.xml" value="0.38903985507246375" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.5045" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/drawable/ic_launcher_background.xml" value="0.5045" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/activity_main.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/activity_main2.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/booking_complete.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/booking_page.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/find_pw.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/fragment_1.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/fragment_2.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/fragment_3.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/item_layout_lr.xml" value="0.389945652173913" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/login.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/match_info.xml" value="0.3171875" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/myteam_page.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/popup.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/reserve_item.xml" value="0.33" />
+        <entry key="..\:/Users/HeeChan/Desktop/SE_prototype_Ver.2/app/src/main/res/layout/sign_up.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment1.xml" value="0.2046875" />
         <entry key="..\:/Users/wsx02/AndroidStudioProjects/TabMaking/app/src/main/res/layout/fragment_1.xml" value="0.36614583333333334" />
@@ -48,19 +89,6 @@
         <entry key="..\:/Users/wsx02/StudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/match_info.xml" value="0.358695652173913" />
         <entry key="..\:/Users/wsx02/StudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/myteam_page.xml" value="0.22" />
         <entry key="..\:/Users/wsx02/StudioProjects/SE_prototype_Ver.2/app/src/main/res/layout/reserve_item.xml" value="0.1875" />
-        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/btn_option.xml" value="0.1" />
-        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_main2.xml" value="0.2604501607717042" />
-        <entry key="app/src/main/res/layout/booking_page.xml" value="0.175" />
-        <entry key="app/src/main/res/layout/find_pw.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/login.xml" value="0.335" />
-        <entry key="app/src/main/res/layout/match_info.xml" value="0.15185185185185185" />
-        <entry key="app/src/main/res/layout/myteam_page.xml" value="0.15185185185185185" />
-        <entry key="app/src/main/res/layout/reserve_item.xml" value="0.175" />
-        <entry key="app/src/main/res/layout/sign_up.xml" value="0.335" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
-        <entry key="app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
       </map>
     </option>
   </component>

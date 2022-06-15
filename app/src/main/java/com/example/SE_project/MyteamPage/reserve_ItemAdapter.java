@@ -198,7 +198,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
     class ViewHolder extends RecyclerView.ViewHolder{
         private TextView title_view,text_view,text_time,info;
         RelativeLayout parentLayout;
-
+        ImageView img;
         ViewHolder(@NonNull View itemView) {
             super(itemView);
             //imageView=itemView.findViewById(R.id.b_image);
@@ -207,6 +207,7 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
             text_time = itemView.findViewById(R.id.reserve_time);
             parentLayout = itemView.findViewById(R.id.parentLayout);
             info=itemView.findViewById(R.id.info);
+            img=itemView.findViewById(R.id.img);
         }
 
         public void setItem(ReservationItem item,String teamname){
@@ -221,8 +222,22 @@ public class reserve_ItemAdapter extends RecyclerView.Adapter<reserve_ItemAdapte
             title_view.setText(item.getName());
             Log.d("이름", item.getName());
             text_view.setText(item.getAdress());
-
             text_time.setText(item.getTime());
+            if(item.getName().equals("천마 풋살 파크")){
+                img.setImageResource(R.drawable.cheonma);
+            }
+            else if(item.getName().equals("아차산 배수지 체육공원")){
+                img.setImageResource(R.drawable.mt_acha);
+            }
+            else if(item.getName().equals("서울 상암 월드컵")){
+                img.setImageResource(R.drawable.seoul_world_cup);
+            }
+            else if(item.getName().equals("가천대학교 운동장")){
+                img.setImageResource(R.drawable.gachon);
+            }
+            else if(item.getName().equals("가양 레포츠 센터 축구장")){
+                img.setImageResource(R.drawable.gayang);
+            }
 
         }
     }

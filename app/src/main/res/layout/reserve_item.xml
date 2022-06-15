@@ -16,51 +16,56 @@
         android:backgroundTint="@color/white"
         app:cardCornerRadius="20dp"
         app:cardElevation="5dp">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:orientation="horizontal">
+
             <LinearLayout
-                android:layout_weight="2"
                 android:layout_width="150dp"
                 android:layout_height="match_parent"
+                android:layout_weight="2"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/reserve_name"
-                    android:layout_margin="5dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="20dp"
-                    android:text="구장 예약 상황" />
+                    android:layout_margin="5dp"
+                    android:text="구장 예약 상황"
+                    android:textSize="20dp" />
+
                 <TextView
                     android:id="@+id/info"
-                    android:layout_margin="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:textSize="14dp" />
+
                 <TextView
                     android:id="@+id/reserve_text"
-                    android:layout_margin="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textSize="14dp"
-                    />
+                    android:layout_margin="3dp"
+                    android:textSize="14dp" />
+
                 <TextView
                     android:id="@+id/reserve_time"
-                    android:layout_margin="3dp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_margin="3dp"
                     android:textSize="14dp" />
             </LinearLayout>
+
             <ImageView
-                android:scaleType="fitXY"
+                android:id="@+id/img"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_margin="3dp"
                 android:layout_weight="3"
                 android:gravity="end"
-                android:id="@+id/img"
-              />
+                android:scaleType="fitXY" />
         </LinearLayout>
 
 
